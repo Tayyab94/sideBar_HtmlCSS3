@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="img/logo.svg" alt="" />
+      </div>
+      <input type="checkbox" id="nav_check" hidden />
+      <nav>
+        <div class="logo">
+          <img src="img/logo.svg" alt="" />
+        </div>
+        <ul>
+          <li>
+            <a class="active" href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Service</a>
+          </li>
+          <li>
+            <a href="#">Price</a>
+          </li>
+        </ul>
+      </nav>
+
+      <label class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </label>
+    </header>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".hamburger").click(function () {
+          if ($("#nav_check").prop("checked")) {
+            // If it's checked, uncheck it
+            $("#nav_check").prop("checked", false);
+          } else {
+            // If it's not checked, check it
+            $("#nav_check").prop("checked", true);
+          }
+        });
+
+        $("nav ul li a").click(function () {
+          // Remove the active class from all links
+          $("nav ul li a").removeClass("active");
+
+          // Add the active class only to the clicked link
+          $(this).addClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>
